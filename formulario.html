@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Define el tipo de documento como HTML5 -->
+    <meta charset="UTF-8">
+
+    <!-- Permite que la página sea responsive en celulares -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Formulario de Cotización - KSS La Reyna del postre</title>
+
+    <style>
+        /* Definición de colores pastel y estilos base */
+        :root {
+            --pastel-pink: #fdf2f8;
+            --accent-pink: #fbcfe8;
+            --deep-pink: #db2777;
+            --nav-brown: #4b3832; 
+            --white: #ffffff;
+            --soft-gray: #f3f4f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: var(--pastel-pink);
+            color: #333;
+        }
+
+        /* HEADER: Contenedor del logo y slogan */
+        header {
+            background-color: var(--white);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent-pink);
+        }
+
+        header h1 {
+            font-size: 1.3rem;
+            color: var(--deep-pink);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* NAV: Barra de navegación con elementos a la derecha */
+        nav {
+            background-color: var(--nav-brown);
+            padding: 12px 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            margin: 0;
+            padding: 0;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: var(--accent-pink);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--white);
+        }
+
+        /* MAIN: Contenedor principal del contenido */
+        main {
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        /* SECTION: Caja donde se encuentra el formulario */
+        section {
+            background-color: var(--white);
+            max-width: 500px;
+            width: 100%;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: var(--nav-brown);
+        }
+
+        /* FORMULARIO */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        /* Agrupa cada campo del formulario */
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        label {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, select {
+            padding: 12px;
+            border: 2px solid var(--soft-gray);
+            border-radius: 10px;
+            background-color: #fafafa;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: var(--accent-pink);
+        }
+
+        /* BOTONES */
+        button {
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-calc {
+            background-color: #f3e8ff;
+            color: #7e22ce;
+        }
+
+        .total-box {
+            background-color: #fefce8;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            border: 2px dashed #facc15;
+            font-weight: bold;
+        }
+
+        .btn-order {
+            background-color: var(--deep-pink);
+            color: white;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(219, 39, 119, 0.2);
+        }
+
+        button:hover {
+            filter: brightness(0.95);
+            transform: translateY(-1px);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+        }
+
+        .fb-icon {
+            color: #1877f2;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER: Contiene el slogan del negocio -->
+    <header>
+        <h1>HECHO CON AMOR, SABOR QUE SE NOTA</h1>
+    </header>
+
+    <!-- NAV: Menú de navegación del sitio -->
+    <nav>
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="catalogo.html">CATÁLOGO</a></li>
+            <li><a href="sobremi.html">SOBRE MÍ</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN: Área principal del contenido -->
+    <main>
+
+        <!-- SECTION: Bloque que contiene el formulario de cotización -->
+        <section>
+
+            <!-- Título que explica la función del formulario -->
+            <h2>COTIZACIÓN DE GALLETAS DE CHOCOLATE</h2>
+
+            <!-- 
+            ETIQUETA FORM
+            Define un formulario HTML que permite al usuario ingresar datos
+            para solicitar una cotización de productos.
+            -->
+            <form>
+                
+                <!-- 
+                DIV .form-group
+                Agrupa cada campo del formulario para mantener orden y diseño.
+                -->
+                <div class="form-group">
+
+                    <!-- 
+                    LABEL
+                    Describe el campo que el usuario debe llenar.
+                    -->
+                    <label>TIPO DE EVENTO</label>
+
+                    <!-- 
+                    SELECT
+                    Permite al usuario elegir una opción de una lista desplegable.
+                    Se utiliza para seleccionar el tipo de evento para el pedido.
+                    -->
+                    <select name="evento">
+
+                        <!-- OPTION define cada opción disponible -->
+                        <option value="cumple">Cumpleaños</option>
+                        <option value="boda">Boda</option>
+                        <option value="escolar">Evento escolar</option>
+                        <option value="reunion">Reunión familiar</option>
+                        <option value="quinceaños">XV años</option>
+                        <option value="graduacion">Graduación</option>
+                        <option value="aniversario">Aniversario</option>
+
+                    </select>
+                </div>
+
+                <!-- Campo para ingresar número de personas -->
+                <div class="form-group">
+
+                    <!-- Etiqueta descriptiva del campo -->
+                    <label>NÚMERO DE PERSONAS</label>
+
+                    <!-- 
+                    INPUT type="number"
+                    Permite ingresar únicamente números.
+                    En este caso se usa para indicar para cuántas personas
+                    será el pedido de galletas.
+                    -->
+                    <input type="number" 
+                    name="cantidad" 
+                    placeholder="¿Para cuántas personas es el pedido?" 
+                    min="1">
+
+                </div>
+
+                <!-- Campo para seleccionar fecha -->
+                <div class="form-group">
+
+                    <label>FECHA REQUERIDA DEL PEDIDO</label>
+
+                    <!-- 
+                    INPUT type="date"
+                    Permite al usuario seleccionar una fecha desde un calendario.
+                    Se utiliza para indicar cuándo necesita el pedido.
+                    -->
+                    <input type="date" name="fecha">
+
+                </div>
+
+                <!-- Campo para agregar notas o personalización -->
+                <div class="form-group">
+
+                    <label>SABORES O RELLENOS EXTRAS</label>
+
+                    <!-- 
+                    INPUT type="text"
+                    Permite escribir texto libre.
+                    En este caso el cliente puede agregar sabores o detalles
+                    personalizados para las galletas.
+                    -->
+                    <input type="text" 
+                    name="notas" 
+                    placeholder="Ej. Nutella, chispas de chocolate blanco...">
+
+                </div>
+
+                <!-- 
+                BOTÓN PARA CALCULAR COTIZACIÓN
+                Este botón puede usarse posteriormente con JavaScript
+                para calcular el precio aproximado del pedido.
+                -->
+                <button type="button" class="btn-calc">
+                    REALIZAR COTIZACIÓN
+                </button>
+
+                <!-- 
+                CONTENEDOR DEL RESULTADO
+                Aquí se mostrará el precio aproximado del pedido
+                después de realizar el cálculo.
+                -->
+                <div class="total-box">
+                    <span>TOTAL APROXIMADO: $ --</span>
+                </div>
+
+                <!-- 
+                BOTÓN DE ENVÍO DEL FORMULARIO
+                type="submit" envía los datos del formulario
+                para procesar el pedido o guardarlo en un sistema.
+                -->
+                <button type="submit" class="btn-order">
+                    SOLICITAR PEDIDO
+                </button>
+
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER: Pie de página con referencia a Facebook -->
+    <footer>
+        <span class="fb-icon">f</span>
+        <span>KSS La Reyna del postre</span>
+    </footer>
+
+</body>
+</html>
