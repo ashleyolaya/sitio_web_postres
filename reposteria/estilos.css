@@ -1,0 +1,558 @@
+/* ===================================================== */
+/* CONFIGURACIÓN GENERAL */
+/* ===================================================== */
+
+/* Selector universal (*)
+   Se aplica a TODOS los elementos de la página.
+   Se utiliza para eliminar los márgenes y padding por defecto
+   del navegador y evitar diferencias entre navegadores.
+
+   También se aplica box-sizing:border-box para que el cálculo
+   del tamaño de los elementos incluya el padding y el border
+   dentro del width y height (parte del CSS Box Model). */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* Selector de etiqueta (body)
+   Aplica estilos al cuerpo completo de la página. */
+
+body{
+font-family:'Poppins', sans-serif;
+background:#fff5f7;
+color:#333;
+line-height:1.6;
+}
+
+
+/* ===================================================== */
+/* HEADER */
+/* ===================================================== */
+
+/* Selector de clase (.header)
+   Define el diseño visual del encabezado del sitio web. */
+
+.header{
+background:linear-gradient(135deg,#ffd6e7,#ffe8f0);
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+
+/* padding forma parte del modelo de caja
+   y crea espacio interno dentro del header */
+
+padding:10px 40px;
+}
+
+/* Contenedor del header */
+
+.header-container{
+
+/* Flexbox permite acomodar logo, slogan y menú en una fila */
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+
+/* ===================================================== */
+/* LOGO */
+/* ===================================================== */
+
+/* Selector de clase (.logo)
+   Controla el tamaño del logo del negocio */
+
+.logo{
+
+/* width y height controlan el tamaño del elemento */
+
+height:130px;
+width:auto;
+}
+
+
+/* ===================================================== */
+/* SLOGAN */
+/* ===================================================== */
+
+.slogan-container{
+flex:1;
+text-align:center;
+}
+
+/* Estilos del texto del slogan */
+
+.slogan{
+font-family:'Playfair Display',serif;
+font-size:22px;
+color:#8b3a5e;
+letter-spacing:1px;
+}
+
+
+/* ===================================================== */
+/* NAVBAR */
+/* ===================================================== */
+
+.navbar{
+display:flex;
+justify-content:flex-end;
+}
+
+.menu{
+
+/* Flexbox organiza los botones del menú */
+
+display:flex;
+gap:20px;
+list-style:none;
+}
+
+
+/* ===================================================== */
+/* BOTONES DEL MENÚ */
+/* ===================================================== */
+
+/* Selector descendente (.menu a)
+   Aplica estilos a los enlaces que están dentro del menú */
+
+.menu a{
+
+text-decoration:none;
+font-family:'Poppins',sans-serif;
+font-weight:500;
+font-size:16px;
+
+/* padding genera espacio interno dentro del botón */
+
+padding:10px 22px;
+
+border-radius:25px;
+color:#5a2a3b;
+background:white;
+
+box-shadow:0 3px 8px rgba(0,0,0,0.08);
+transition:all 0.3s ease;
+}
+
+/* Pseudo-clase hover
+   Cambia el estilo cuando el usuario pasa el cursor */
+
+.menu a:hover{
+background:#ff8fb1;
+color:white;
+transform:translateY(-2px);
+box-shadow:0 6px 12px rgba(0,0,0,0.15);
+}
+
+
+/* ===================================================== */
+/* POSTRES DEL DÍA */
+/* ===================================================== */
+
+.postres-dia{
+
+/* padding crea espacio interno en la sección */
+
+padding:50px;
+text-align:center;
+}
+
+.postres-dia h2{
+font-family:'Playfair Display',serif;
+font-size:30px;
+
+/* margin separa el título de los elementos inferiores */
+
+margin-bottom:30px;
+color:#8b3a5e;
+}
+
+
+/* ===================================================== */
+/* CARRUSEL */
+/* ===================================================== */
+
+.carousel{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:20px;
+}
+
+.carousel button{
+
+background:#ff8fb1;
+border:none;
+color:white;
+font-size:24px;
+
+/* padding controla el tamaño interno del botón */
+
+padding:10px 16px;
+
+border-radius:50%;
+cursor:pointer;
+transition:0.3s;
+}
+
+.carousel button:hover{
+background:#ff6f91;
+}
+
+
+/* ===================================================== */
+/* CONTENEDOR DE TARJETAS */
+/* ===================================================== */
+
+.carousel-track{
+
+/* flex organiza las tarjetas horizontalmente */
+
+display:flex;
+gap:25px;
+transition:transform 0.5s;
+}
+
+
+/* ===================================================== */
+/* TARJETAS DE POSTRES */
+/* EJEMPLO DEL CSS BOX MODEL */
+/* ===================================================== */
+
+.postre{
+
+/* CONTENT
+   El contenido de esta caja incluye
+   la imagen del postre, su nombre y precio */
+
+background:white;
+
+/* WIDTH controla el ancho de la tarjeta */
+
+width:200px;
+
+/* PADDING
+   Espacio interno entre el contenido y el borde */
+
+padding:15px;
+
+/* BORDER
+   Borde visible de la tarjeta */
+
+border:2px solid #ffd6e7;
+
+/* BORDER RADIUS
+   Redondea las esquinas */
+
+border-radius:12px;
+
+/* MARGIN
+   Espacio externo entre tarjetas */
+
+margin:10px;
+
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+transition:0.3s;
+
+/* flex organiza contenido verticalmente */
+
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.postre:hover{
+transform:translateY(-5px);
+}
+
+/* Imagen del postre */
+
+.postre img{
+
+/* width ocupa todo el ancho del contenedor */
+
+width:100%;
+
+/* height controla la altura para que todas
+   las imágenes tengan el mismo tamaño */
+
+height:220px;
+
+/* evita que la imagen se deforme */
+
+object-fit:cover;
+
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.postre h3{
+font-size:18px;
+margin-bottom:5px;
+}
+
+.postre p{
+font-weight:bold;
+color:#ff6f91;
+}
+
+
+/* ===================================================== */
+/* CATEGORÍAS */
+/* ===================================================== */
+
+.categorias{
+padding:60px 40px;
+text-align:center;
+}
+
+.categorias h2{
+font-family:'Playfair Display',serif;
+font-size:30px;
+margin-bottom:40px;
+color:#8b3a5e;
+}
+
+
+/* ===================================================== */
+/* GRID DE CATEGORÍAS */
+/* ===================================================== */
+
+.grid-categorias{
+
+/* CSS Grid organiza las categorías en columnas */
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+
+/* ===================================================== */
+/* TARJETAS DE CATEGORÍAS */
+/* (APLICANDO EL BOX MODEL) */
+/* ===================================================== */
+
+.categoria{
+
+background:white;
+
+/* padding crea espacio interno */
+
+padding:15px;
+
+/* border forma parte del modelo de caja */
+
+border:2px solid #ffd6e7;
+
+border-radius:12px;
+
+/* margin separa tarjetas */
+
+margin:10px;
+
+text-decoration:none;
+color:#333;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+transition:0.3s;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.categoria:hover{
+transform:translateY(-6px);
+box-shadow:0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Imagen de categoría */
+
+.categoria img{
+
+width:100%;
+
+/* altura fija para que todas las imágenes
+   tengan el mismo tamaño */
+
+height:220px;
+
+/* evita deformación */
+
+object-fit:cover;
+
+border-radius:10px;
+
+margin-bottom:10px;
+}
+
+.categoria p{
+font-weight:500;
+font-size:16px;
+}
+
+
+/* ===================================================== */
+/* CATÁLOGO */
+/* ===================================================== */
+
+.titulo{
+text-align:center;
+font-size:32px;
+margin-top:40px;
+color:#8b3a5e;
+font-family:'Playfair Display',serif;
+}
+
+.catalogo-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+padding:50px;
+}
+
+.producto{
+
+background:white;
+
+padding:15px;
+
+border:2px solid #ffd6e7;
+
+border-radius:12px;
+
+margin:10px;
+
+text-align:center;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.producto:hover{
+transform:translateY(-6px);
+}
+
+.producto img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.producto h3{
+margin-bottom:5px;
+}
+
+.producto p{
+color:#ff6f91;
+font-weight:bold;
+}
+
+
+/* ===================================================== */
+/* SOBRE MI */
+/* ===================================================== */
+
+.sobre-mi{
+
+max-width:800px;
+
+/* margin auto centra el contenedor */
+
+margin:auto;
+
+padding:60px 30px;
+
+text-align:center;
+}
+
+.sobre-mi h2{
+font-family:'Playfair Display',serif;
+font-size:32px;
+margin-bottom:20px;
+color:#8b3a5e;
+}
+
+.sobre-mi p{
+margin-bottom:15px;
+font-size:17px;
+}
+
+
+/* ===================================================== */
+/* FOOTER */
+/* ===================================================== */
+
+footer{
+
+background:#ffd6e7;
+
+padding:25px;
+
+text-align:center;
+
+/* margin-top separa el footer del contenido */
+
+margin-top:40px;
+}
+
+footer a{
+text-decoration:none;
+font-weight:600;
+color:#5a2a3b;
+font-size:18px;
+transition:0.3s;
+}
+
+footer a:hover{
+color:#ff6f91;
+}
+
+
+/* ===================================================== */
+/* RESPONSIVE */
+/* ===================================================== */
+
+@media (max-width:1000px){
+
+.header-container{
+flex-direction:column;
+gap:15px;
+}
+
+.menu{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.grid-categorias{
+grid-template-columns:repeat(2,1fr);
+}
+
+.catalogo-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media (max-width:600px){
+
+.grid-categorias{
+grid-template-columns:1fr;
+}
+
+.catalogo-grid{
+grid-template-columns:1fr;
+}
+
+.postres-dia{
+padding:30px;
+}
+
+}
